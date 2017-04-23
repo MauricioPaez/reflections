@@ -1,0 +1,74 @@
+How did viewing a diff between two versions of a file help you see the bug that
+was introduced?
+
+  Viewing a diff between two versions of a single file helped me to identify
+  additions and subtractions and when a single area of code introduced may have
+  been the cause of a bug.
+
+How could having easy access to the entire history of a file make you a more
+efficient programmer in the long term?
+
+    To be able to access the whole history of a file allows me to keep track of
+    every change made to it and to return to a single step if required. Also,
+    everything looks more organized and every logical step is properly described
+    so if I want to look back some time later, I will understand everything I
+    did.
+
+What do you think are the pros and cons of manually choosing when to create a
+commit, like you do in Git, vs having versions automatically saved, like Google
+docs does?
+
+  By committing manually instead of automatically, you can decide what to commit
+  and when. This gives the opportunity to split the commits based on
+  functionality. By committing manually you can specify commit messages
+  describing what has changed, instead of only showing an auto commit.
+
+Why do you think some version control systems, like Git, allow saving multiple
+files in one commit, while others, like Google Docs, treat each file separately?
+
+  Multi-file commits are useful when files are related to each other. "Normal"
+  documents seldom have relations, so those are not needed. In source code,
+  files will have lots of relations. So having multi-file commits is an
+  essential feature.
+
+How can you use the commands git log and git diff to view the history of files?
+
+    By using git log, the shell displays every commit that has been made to the
+    repository and some information about each commit, such as the date, the
+    author, the commit ID and the description of the commit made. This is
+    essential when using git diff, because you need to have the origin commit ID
+    and the new commit ID that are to be compared.
+
+How might using version control make you more confident to make changes that
+could break something?
+
+    When using version control, in this case git, I can always go back to a safe
+    commit where everything was working properly with the command git checkout
+    and the commit ID. Simply, you are able to risk and make some big changes to
+    the base code, even change it completely without fearing to lose everything
+    if the changes don't work.
+
+Now that you have your workspace set up, what do you want to try using Git for?
+
+    Git has a lot of useful features that will allow us to have better organized
+    projects, to keep everything under control and to have the flexibility to
+    jump back in case somethin goes wrong.
+
+    Commands used in Lesson 1:
+
+    q/esc           |    Exit git log
+    mkdir           |    Create a directory
+    cd ~            |    Go to home
+    atom            |    Open atom
+    atom 'file name'|    Open the file in atom
+    ls              |    List all the files in the current (working) directory
+    ls -a           |    Show the hidden files that start with .
+    pwd             |    Print the working directory
+    mv (source directory)/(file name) (you can change the name of the file that
+                                       you want to save in the wd)
+    git log         |    List the commits and show which files have changed
+    git log --stat  |    Show addition information about the commits
+    git diff (origin commit ID) (new commit ID)  |    Compare two commits
+    git clone       |    Create a local copy/clone from the repository
+    git config --global color.ui auto            |    get colored diff output
+    git checkout    |    Shows a previous version of the file.
