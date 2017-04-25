@@ -11,6 +11,9 @@ local?
     using GitHub or someone else is working along with me, they would work
     through the remote and we would be able to push and pull commits done to the
     remote.
+    
+    Also, if i am on a different machine and still want to update or edit files
+    on my remote, i can do it and later pull these new commits to my local.
 
 Why might you want to always pull changes manually rather than having Git
 automatically stay up-to-date with your remote repository?
