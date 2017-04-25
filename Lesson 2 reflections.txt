@@ -1,0 +1,111 @@
+What happens when you initialize a repository? Why do you need to do it?
+
+  A new repository is created by running the command git init. A repository is
+  different from an ordinary folder because it contains a folder called .git,
+  this file allows to store meta data such as commits.
+
+  A commit is a snapshot of a Git repository. When a repository is initialized,
+  it contains no commits.
+
+  "HEAD" is Git's name for the current commit.
+
+How is the staging area different from the working directory and the repository?
+What value do you think it offers?
+
+  The working directory is folder where our files are stored and the repository
+  is where our git commits (snapshots of the current states of our files) are
+  shown. The staging area is the middle ground that allow us to specify exactly
+  what changes should be committed, so whenever I am ready to commit, git
+  bundles the entire content of the staging area into a single commit and adds
+  it to the repository.
+
+  I consider that the staging area offers the ability to decide what logical
+  steps should be committed and to have even more control in the process.
+
+How can you use the staging area to make sure you have one commit per logical
+change?
+
+  I can add only the changes affected by the first logical change to the staging
+  area and then, commit those without committing the other. It is quite useful
+  to understand the concept of staging area since it allows us to follow and
+  track changes and control every commit made.
+
+What are some situations when branches would be helpful in keeping your history
+organized? How would branches help?
+
+  Using branches is helpful when you want to implement an experimental feature
+  or to make your project supported to other users so they are able to use it
+  and not only that, but to cooperate with us in our project.
+
+  A branch is a label for your commit. Master is the central branch and is
+  created as soon as you initialized your repository.
+
+How do the diagrams help you visualize the branch structure?
+
+  Diagrams show graphically how branches are developed and how they move forward
+  depending on the position we are and the commits we add as we go on our
+  project. It is very important to understand the concept of reachability, all
+  the commits are within a branch, and if we checkout on a commit ID, then this
+  commit won't be reachable for other branches and their commits.
+
+What is the result of merging two branches together? Why do we represent it in
+the diagram the way we do?
+
+When two branches merge, e.g. coins and master, we are actually creating a new
+commit and it stores information about both of its parents. The new commit then
+turns into the new tip of the master branch. Once merging is successful, we can
+delete the "coins" branch, the label, since we will be able to reach its
+previous commits through the new master branch.
+
+It is represented in the diagram that way because when we merge we are actually
+creating a new commit and putting in the label master to it. This means that
+all the previous commits of the merged branches are now in the same git log and
+can be found in master.
+
+What are the pros and cons of Git’s automatic merging vs. always doing merges
+manually?
+
+  Git can't tell if the additions made by different contributors are better or
+  whether they should be included or not, that is easier for us to do. If git
+  tried to do this, to auto merged and figure it by itself, it would guess often
+  and conglomerate changes don't make sense and probably wouldn't compile and
+  run.
+
+  When manually resolving merge conflicts, the first thing is to understand the
+  changes made by both branches. We have to keep in mind that t is pretty common
+  to have changes made by us and by someone else, so we might have to go and
+  talk to that person.
+
+Commands used in lesson 2:
+
+git init                |    Creates or reactivates a repository
+git add 'file name'     |    Add a file to the staging area
+git commit    |    Commit the files from the staging area to the repository
+git status    |    Show which files are in the staging area, and which files
+                   from the working directory are not part of the repository
+git diff      |    Git diff without arguments is comparing the working directory
+                   with the staging area
+git diff --staged    |    Compare the staging area with the repository
+git reset --hard     |    Discards all changes in either the working directory
+                          or the staging area! There is no rollback for this,
+                          so be careful!
+git checkout master  |    Restore the "Head" to the latest check-in, let you
+                          come back to the master branch
+git branch           |    Prints the branches in the directory
+git branch (branch name with no spaces)        | creates a branch
+git branch -d (branch name)                    | deletes a branch
+git checkout (branch name)                     | switches to the new branch
+git log --graph --oneline <branch1> <branch2>  |    Show a visual representation
+                                                    of the commit history within
+                                                    different branches
+git checkout -b new_branch_name  |    Creates a new branch and do a checkout on
+                                      this branch in one call instead of git
+                                      branch new_branch_name and git checkout
+                                      new_branch_name
+git merge branch1 branch2        |    Merge two branches, branch2 get merged
+                                      into branch1
+git branch -d name               |    Remove the branch with the specified name
+git show commitId                |    Show the changes made in this commit
+                                      compared to the previous version. This
+                                      works even after merging.
+git log -n (number)              |    Shows only the number of commits specified
