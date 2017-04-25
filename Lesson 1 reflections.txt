@@ -69,6 +69,6 @@ Now that you have your workspace set up, what do you want to try using Git for?
     git log         |    List the commits and show which files have changed
     git log --stat  |    Show addition information about the commits
     git diff (origin commit ID) (new commit ID)  |    Compare two commits
-    git clone       |    Create a local copy/clone from the repository
+    git clone       |    Create a local copy/clone from the remote repository
     git config --global color.ui auto            |    get colored diff output
     git checkout    |    Shows a previous version of the file.
